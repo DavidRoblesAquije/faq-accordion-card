@@ -1,0 +1,277 @@
+@import url('../css/font.css');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+* a, * p, * h1, * h2, * h3, * h4, * ul, * li {
+    margin: 0;
+    padding: 0;
+}
+
+* a {
+    color: inherit;
+    transition: all .3s ease-in-out;
+}
+
+* ul, * ol {
+    list-style-type: none;
+    margin: 0;
+}
+
+:root {
+    --desaturedblue: hsl(238, 29%, 16%);
+    --softred: hsl(14, 88%, 65%);
+    --softviolet: hsl(273, 75%, 66%);
+    --softblue: hsl(240, 73%, 65%);
+    --verydarkblue: hsl(237, 12%, 33%);
+    --darkblue: hsl(240, 6%, 50%);
+    --lightblue: hsl(240, 5%, 91%);
+    --nocolor: transparent;
+}
+
+body {
+    font-family: 'kumb_r';
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 700px;
+    background: linear-gradient(var(--softviolet), var(--softblue));
+}
+
+header {
+    position: relative;
+    /* background: linear-gradient(var(--softviolet), var(--softblue)); */
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    width: 1440px;
+}
+
+.headerConent {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    align-items: center;
+    padding: 70px;
+    overflow: hidden;
+    width: 880px;
+    height: 400px;
+}
+
+.image {
+    position: relative;
+    height: 100%;
+}
+
+.decoration {
+    position: absolute;
+    top: -31em;
+    left: -673px;
+    width: 1000px;
+}
+
+.decoration img {
+    width: 100%;
+}
+
+#desktop_resp, #woman_resp {
+    display: none;
+}
+
+.arroba {
+    position: absolute;
+    top: 309px;
+    left: 118px;
+    z-index: 2;
+}
+
+.women {
+    position: absolute;
+    left: -145px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*****card accordion********/
+
+.content {
+    position: relative;
+    overflow: hidden;
+}
+
+.card_title {
+    position: relative;
+}
+
+.card_title, .card_body {
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+
+.card_body {
+    height: 0px;
+}
+
+.card_title {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card_title::before {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    border: solid var(--softred);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: translateY(-50%) rotate(45deg);
+    transition: all .3s ease-in-out;
+}
+
+.content h1 {
+    font-family: 'kumb_b';
+    font-size: 29px;
+}
+
+.accordion_card {
+    position: relative;
+    margin: 5px 0;
+    border-bottom: 1px solid var(--darkblue);
+}
+
+.activado .card_title::before {
+    transform: translateY(-50%) rotate(225deg);
+}
+
+.activado .card_body {
+    height: 50px;
+}
+
+.card_title h4 {
+    transition: all .3s ease-in-out;
+}
+
+.card_title:hover h4 {
+    color: var(--softred);
+}
+
+.activado .card_title h4 {
+    font-size: 14px;
+    font-family: 'kumb_b';
+}
+
+/**********/
+
+@media screen and (max-width:1441px) {
+    header {
+        width: 1199px;
+    }
+    .arroba {
+        left: -3px;
+    }
+}
+
+@media screen and (max-width:1199px) {
+    header {
+        width: 800px;
+        padding: 90px;
+    }
+}
+
+@media screen and (max-width:991px) {
+    header {
+        width: 100%;
+        padding: 90px 0;
+    }
+    .headerConent {
+        grid-template-columns: 100%;
+    }
+    .decoration {
+        position: absolute;
+        top: 115px;
+        left: 50%;
+        width: 230px;
+        transform: translateX(-43%);
+    }
+    #desktop, #woman, .arroba {
+        display: none;
+    }
+    #desktop_resp, #woman_resp {
+        display: block;
+    }
+    .headerConent {
+        height: 400px;
+        display: block;
+        width: 575px;
+    }
+    .content {
+        margin-top: 80px;
+    }
+    .image {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .women {
+        position: absolute;
+        left: inherit;
+        top: inherit;
+        transform: inherit;
+    }
+    .content h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:767px) {
+    body {
+        min-height: 800px;
+    }
+    header {
+        padding: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .image {
+        top: -54px;
+    }
+    .decoration {
+        top: 55px;
+    }
+    .headerConent {
+        width: 450px;
+        height: 430px;
+        padding: 70px 45px;
+        position: relative;
+        overflow: unset;
+    }
+}
+
+@media screen and (max-width:575px) {
+    .headerConent {
+        width: 320px;
+        padding: 70px 25px;
+    }
+    .activado .card_body {
+        height: 65px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .headerConent {
+        width: 292px;
+        padding: 70px 10px;
+    }
+}

@@ -1,0 +1,14 @@
+@font-face{
+    font-family: 'kumb_b';
+    src: url('../fonts/KumbhSans-Bold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'kumb_l';
+    src: url('../fonts/KumbhSans-Light.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'kumb_r';
+    src: url('../fonts/KumbhSans-Regular.ttf') format('truetype');
+}
